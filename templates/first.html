@@ -1,0 +1,29 @@
+{% load static %}
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Your Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Your Website</h1>
+        <nav>
+            {% draw_menu 'first'|safe %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Здесь будет содержимое каждой отдельной страницы -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+</body>
+</html>
